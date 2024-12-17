@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome to the User Dashboard!</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="from">From:</label>
+                <select name="from" id="from" required>
+                    <option value="City A">City A</option>
+                    <option value="City B">City B</option>
+                    <option value="City C">City C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="to">To:</label>
+                <select name="to" id="to" required>
+                    <option value="City A">City A</option>
+                    <option value="City B">City B</option>
+                    <option value="City C">City C</option>
+                </select>
+            </div>
+            <button type="submit">Show Fare</button>
+        </form>
+
+        {% if fare %}
+            <div class="fare-display">
+                <h3>Fare: ${{ fare }}</h3>
+                <a href="{{ url_for('book_ticket') }}">
+                    <button>Book Ticket</button>
+                </a>
+            </div>
+        {% endif %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>

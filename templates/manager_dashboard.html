@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Manager Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Bus Manager Dashboard</h2>
+        <p><strong>Number of passengers currently in the bus:</strong> {{ passengers }}</p>
+        <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+    </div>
+</body>
+</html>

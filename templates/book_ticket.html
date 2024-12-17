@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Book Your Ticket</h2>
+        <p><strong>From:</strong> {{ from_location }}</p>
+        <p><strong>To:</strong> {{ to_location }}</p>
+        <p><strong>Fare:</strong> ${{ fare }}</p>
+
+        <form method="POST">
+            <button type="submit">Pay and Confirm Booking</button>
+        </form>
+    </div>
+</body>
+</html>
